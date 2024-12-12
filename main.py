@@ -119,18 +119,17 @@ def draw_with_pyvis(fields_in, methods_in, relationships_in):
 
         for field_l in rel_l["fields"]["read"]:
             if field_l in fields_in:
-                net.add_edge(method_l, field_l, title="Reads Field", color="blue", label="R")  # Added label
+                net.add_edge(method_l, field_l, title="Reads Field", color="blue")
             else:
                 print(f"Warning: Field '{field_l}' (read by {method_l}) not found in fields_in.")
         for field_l in rel_l["fields"]["write"]:
             if field_l in fields_in:
-                net.add_edge(method_l, field_l, title="Initializes Field", color="red",
-                             label="W")  # Corrected title and added label
+                net.add_edge(method_l, field_l, title="Initializes Field", color="red")
             else:
                 print(f"Warning: Field '{field_l}' (written by {method_l}) not found in fields_in.")
         for called_method in rel_l["methods"]:
             if called_method in method_labels:
-                net.add_edge(method_l, called_method, title="Calls Method", label="C")  # Added label
+                net.add_edge(method_l, called_method, title="Calls Method")
             else:
                 print(f"Warning: Method '{called_method}' (called by {method_l}) not found in method_labels.")
 
