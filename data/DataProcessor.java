@@ -3,9 +3,9 @@ public class DataProcessor {
     private String internalData;
     public int processedCount;
 
-    public DataProcessor(String initialData) {
-        this.internalData = initialData;
-        this.processedCount = 0;
+    public DataProcessor(String value) {
+        internalData = value;
+        processedCount = 0;
     }
 
     public void processData(int iterations) {
